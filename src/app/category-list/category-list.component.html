@@ -1,0 +1,27 @@
+<table class="table mt-4 table-borderd">
+    <thead>
+        <tr>
+            <td>S.No</td>
+            <td>CategoryName</td>
+            <td>CategoryImage</td>
+            <td>Edit</td>
+            <td>Delete</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor=" let category of categoryList;index as i">
+            <td>{{i+1}}</td>
+            <td>{{category.categoryName}}</td>
+            <td><img src="{{category.categoryImage}} mt-4" width="130px" height="100px" ></td>
+            <!-- <td ><button>Edit</button></td> -->
+            <!-- <td><button class="btn btn-danger" (click)="deletecategory(category._id)">Delete</button></td> -->
+           
+            
+
+             <a routerLink="update/{{category._id}}"><i style='font-size:24px' class='fas text-success mt-4'>&#xf303;</i></a>
+
+             <td><a (click)="deletecategory(category._id)"><i style='font-size:24px'
+                class='fas text-danger mt-4'>&#xf1f8;</i></a></td>
+        </tr>
+    </tbody>
+</table>

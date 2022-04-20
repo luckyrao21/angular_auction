@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <form>
+        <div class="mb-3">
+            <label for="username">categoryName</label>
+            <input type="text" class="form-control" placeholder="enter categoryName" name="categoryName" [(ngModel)]="categoryName">
+        </div>
+
+        <div class="mb-3">
+            <label for="image">categoryImage</label>
+            <input type="file" class="form-control" placeholder="enter categoryImage" name="categoryImage"
+                (change)=selectImage($event);>
+                <!-- <img [src]="https://firebasestorage.googleapis.com/v0/b/productdb-eaa0c.appspot.com/o/1650399251838-tree.jpeg?alt=media&token=abcddcba" alt="Selected Image" style="width: 70px;height: 70px;"> -->
+        </div>
+        
+        <button  type="Submit" (click)="update()" class="btn btn-danger ml-2">update</button>
+
+        <button class="btn btn-primary ">Cancel</button>
+
+        
+    </form>
+</div>
