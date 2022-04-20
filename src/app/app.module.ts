@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import {FormsModule} from '@angular/forms'
 import { SellerService } from './seller.service';
@@ -18,20 +19,28 @@ import { HomeMainContentComponent } from './home-main-content/home-main-content.
 import { HomeFooterComponent } from './home-footer/home-footer.component';
 import { VerificationService } from './verification.service';
 import { SecNavComponent } from './sec-nav/sec-nav.component';
-
+import { AddProductComponent } from './add-product/add-product.component';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { ProductViewSellerComponent } from './product-view-seller/product-view-seller.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 @NgModule({
   declarations: [
-      UpdateProfileComponent,
+    UpdateProfileComponent,
     ResetPasswordComponent,
     PlaceorderComponent,
     AppComponent,
+    AddProductComponent,
+    ViewProductComponent,
+    ProductViewSellerComponent,
+    UpdateProductComponent,
     HomeNavComponent,
     SigninComponent,
     SignupComponent,
     HomeMainContentComponent,
     HomeFooterComponent,
     SecNavComponent
+
 
   ],
   imports: [
