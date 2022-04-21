@@ -61,7 +61,7 @@ export class UpdateProductComponent implements OnInit {
     formData.append('productInitialPrice', this.productInitialPrice);
     // formData.append('creator',this.creator);
     formData.append('startTime',this.startDate);
-    formData.append('endTime',this.endDate);          
+    formData.append('endTime',this.endDate);
     formData.append('categoryName',this.productCategory);
     formData.append('productImage',this.productImage);
     formData.append('productId',this.productId);
@@ -83,4 +83,3 @@ export class UpdateProductComponent implements OnInit {
   }
 
 }
-                                                                                          
