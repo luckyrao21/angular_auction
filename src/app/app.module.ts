@@ -11,7 +11,6 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { BuyerService } from './buyer.service';
 import { PlaceorderComponent } from './placeorder/placeorder.component';
 import { TokenInterceptorService } from './token-interceptor.service'
-import { FormsModule } from '@angular/forms';
 import { HomeNavComponent } from './home-nav/home-nav.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -54,7 +53,7 @@ import { UpdateProductComponent } from './update-product/update-product.componen
      provide:HTTP_INTERCEPTORS,
      useClass:TokenInterceptorService,
      multi:true
-   }
+   },
   SellerService,
   BuyerService,
   VerificationService
