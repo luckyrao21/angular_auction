@@ -13,6 +13,7 @@ import { ViewProductComponent } from './view-product/view-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
 
 
+
 const routes: Routes = [
   {path:'update-profile', component:UpdateProfileComponent},
   {path:'reset-password', component:ResetPasswordComponent},
@@ -24,7 +25,6 @@ const routes: Routes = [
   {path: "view-product-by-seller",component:ProductViewSellerComponent},
   {path: "view-product-by-seller/update-product/:id", component: UpdateProductComponent},
   {path:"serch-product", component: SearchProductComponent}
-
 ]
 
 @NgModule({

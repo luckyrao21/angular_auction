@@ -14,12 +14,10 @@ export class SigninComponent implements OnInit {
   currentUser:any;
  constructor(private _service:VerificationService,private _router:Router) { }
  public signin(){
-
     this._service.signin(this.email,this.password).subscribe(data=>{
       console.log(data);
       if(data.err){
         alert("login Failed");
-
       }
       else{
         console.log("login")
@@ -30,7 +28,9 @@ export class SigninComponent implements OnInit {
 
         alert("Login Successfully...");
         this._router.navigate(['/']);
+
       }
+
      })
  }
   ngOnInit(): void {

@@ -7,6 +7,7 @@ export class VerificationService {
   signupUrl="https://humaracode.herokuapp.com/customer/signup"
   signinUrl="https://humaracode.herokuapp.com/customer/signin"
 
+
   constructor(private _http:HttpClient) { }
 
   public signup(username:String,email:String,password:String,mobile:Number,address:String,customerRoll:String){
@@ -17,5 +18,5 @@ export class VerificationService {
   }
   public  CheckToken():boolean{
     return !!localStorage.getItem('jwtToken');
-  }
+     }
 }

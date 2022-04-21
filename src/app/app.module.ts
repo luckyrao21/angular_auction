@@ -10,7 +10,6 @@ import { SellerService } from './seller.service';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { BuyerService } from './buyer.service';
 import { PlaceorderComponent } from './placeorder/placeorder.component';
-import { TokenInterceptorService } from './token-interceptor.service'
 import { HomeNavComponent } from './home-nav/home-nav.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -23,6 +22,7 @@ import { ViewProductComponent } from './view-product/view-product.component';
 import { ProductViewSellerComponent } from './product-view-seller/product-view-seller.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { SearchProductComponent } from './search-product/search-product.componen
     SecNavComponent,
     SearchProductComponent
 
-
   ],
   imports: [
     BrowserModule,
@@ -61,7 +60,6 @@ import { SearchProductComponent } from './search-product/search-product.componen
   VerificationService
 
 ],
-
   bootstrap: [AppComponent]
 })
 export class AppModule{

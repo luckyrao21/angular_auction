@@ -10,13 +10,6 @@ import { VerificationService } from '../verification.service';
 export class HomeNavComponent implements OnInit {
 
   constructor(private _Service:VerificationService,private _router:Router){}
-  // public isLoggedIn():boolean{
-  //   if(this._Service.CheckToken())
-  //      return true
-  //   else
-  //     return false
-  // }
-
   ngOnInit(): void {
   }
 
@@ -39,6 +32,6 @@ export class HomeNavComponent implements OnInit {
       sessionStorage.clear();
       this._router.navigate(['/']);
     }
-  }
 
+  }
 }
