@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import {FormsModule} from '@angular/forms'
 import { SellerService } from './seller.service';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { BuyerService } from './buyer.service';
 import { PlaceorderComponent } from './placeorder/placeorder.component';
+import { AddcomplaintComponent } from './addcomplaint/addcomplaint.component';
+import { ViewComplaintComponent } from './view-complaint/view-complaint.component';
+import { RevertComplaintComponent } from './revert-complaint/revert-complaint.component';
 import { HomeNavComponent } from './home-nav/home-nav.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -29,6 +31,9 @@ import { TokenInterceptorService } from './token-interceptor.service';
     UpdateProfileComponent,
     ResetPasswordComponent,
     PlaceorderComponent,
+    AddcomplaintComponent,
+    ViewComplaintComponent,
+    RevertComplaintComponent,
     AppComponent,
     AddProductComponent,
     ViewProductComponent,
@@ -41,7 +46,6 @@ import { TokenInterceptorService } from './token-interceptor.service';
     HomeFooterComponent,
     SecNavComponent,
     SearchProductComponent
-
   ],
   imports: [
     BrowserModule,
@@ -50,8 +54,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
     FormsModule
   ],
   providers: [
-    {
-     provide:HTTP_INTERCEPTORS,
+    {provide:HTTP_INTERCEPTORS,
      useClass:TokenInterceptorService,
      multi:true
    },
