@@ -23,6 +23,7 @@ import { ProductViewSellerComponent } from './product-view-seller/product-view-s
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     HomeMainContentComponent,
     HomeFooterComponent,
     SecNavComponent,
-    SearchProductComponent
+    SearchProductComponent,
+    AboutComponent
 
   ],
   imports: [
