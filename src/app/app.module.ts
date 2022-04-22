@@ -48,6 +48,7 @@ import { AboutComponent } from './about/about.component';
     SecNavComponent,
     SearchProductComponent,
     AboutComponent
+
   ],
   imports: [
     BrowserModule,
