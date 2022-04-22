@@ -1,0 +1,21 @@
+<p>view-complaint works!</p>
+
+      <table class="table table-bordered text-center">
+        <thead>
+            <th>Sno.</th>
+            <th>Customer Name</th>
+            <th>Customer Roll</th>
+            <th>Complaint</th>
+            <th>Revert</th>
+          </thead>
+        <tbody>
+          <tr *ngFor="let complaint of dataList; index as i">
+            <td>{{i+1}}</td>
+            <td>{{complaint.userId.username}}</td>
+            <td>{{complaint.userId.customerRoll}}</td>
+            <td>{{complaint.complaintText}}</td>
+            <td><button routerLink="revert-complaint/{{complaint.userId._id}}" class="btn btn-outline-success text-dark">Revert Complaint</button></td>
+          </tr>
+        </tbody>
+      </table>
+

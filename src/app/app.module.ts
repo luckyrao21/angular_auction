@@ -10,6 +10,9 @@ import { SellerService } from './seller.service';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { BuyerService } from './buyer.service';
 import { PlaceorderComponent } from './placeorder/placeorder.component';
+import { AddcomplaintComponent } from './addcomplaint/addcomplaint.component';
+import { ViewComplaintComponent } from './view-complaint/view-complaint.component';
+import { RevertComplaintComponent } from './revert-complaint/revert-complaint.component';
 // import { Customer } from './customer.buyer.service';
 // import { RESETComponent } from './reset/reset.component';
 @NgModule({
@@ -18,6 +21,9 @@ import { PlaceorderComponent } from './placeorder/placeorder.component';
     UpdateProfileComponent,
     ResetPasswordComponent,
     PlaceorderComponent,
+    AddcomplaintComponent,
+    ViewComplaintComponent,
+    RevertComplaintComponent,
 
   ],
   imports: [
@@ -27,11 +33,11 @@ import { PlaceorderComponent } from './placeorder/placeorder.component';
     FormsModule
   ],
   providers: [
-    // {
-    // provide:HTTP_INTERCEPTORS,
-    // useClass:TokenInterceptorService,
-    // multi:true
-  // }
+    {
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptorService,
+    multi:true
+  },
   SellerService,
   BuyerService
 
