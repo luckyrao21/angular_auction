@@ -1,43 +1,45 @@
- <div class="container mt-5" style="padding-top: 3%; padding-left: 5%; padding-right: 3%; width: fit-content; position: absolute;z-index: 1000; justify-content: center;  margin-left: 35%;">
-  <form #contactForm="ngForm">
-   <div class="form-heading justify-content-center ">
-     <label   for="heading">
-      <h1 style="margin-left: 30% ;"> Signin</h1>
-     </label>
-   </div>
+ <div class="container mt-5"
+   style="padding-top: 3%; padding-left: 5%; padding-right: 3%; width: fit-content; position: absolute;z-index: 1000; justify-content: center;  margin-left: 550px;">
+   <form #contactForm="ngForm">
+     <div class="form-heading justify-content-center ">
+       <label for="heading">
+         <h1 style="margin-left: 30% ;"> Signin</h1>
+       </label>
+     </div>
 
-    <div class="form-group" style="margin-left: 10%;">
-      <label for="Email">Email</label>
-      <input [(ngModel)]="email" required ngModel name="email" type="text" #Email="ngModel" class="form-control" style="width:max-content;"
-        id="email">
-      <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
-        <div *ngIf="Email.errors?.required">Email is required.</div>
-      </div>
-    </div>
-    <div class="form-group" style="margin-left: 10%;">
-      <label for="Password">Password</label>
-      <input [(ngModel)]="password" required minlength="6" maxlength="10" ngModel name="Password" type="text"
-        #Password="ngModel" class="form-control"style="width: fit-content;" id="password">
-      <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
-        <div *ngIf="Password.errors?.required">Password is required.</div>
-        <div *ngIf="Password.errors?.minlength">Password is minimum
-          character.</div>
-        <div *ngIf="Password.errors?.maxlength">Password is maximum 10 character.</div>
-      </div>
-    </div>
+     <div class="form-group" style="margin-left: 10%;">
+       <label for="Email">Email</label>
+       <input [(ngModel)]="email" required ngModel name="email" type="text" #Email="ngModel" class="form-control"
+         style="width:max-content;" id="email">
+       <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+         <div *ngIf="Email.errors?.required">Email is required.</div>
+       </div>
+     </div>
+     <div class="form-group" style="margin-left: 10%;">
+       <label for="Password">Password</label>
+       <input [(ngModel)]="password" required minlength="6" maxlength="10" ngModel name="Password" type="text"
+         #Password="ngModel" class="form-control" style="width: fit-content;" id="password">
+       <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
+         <div *ngIf="Password.errors?.required">Password is required.</div>
+         <div *ngIf="Password.errors?.minlength">Password is minimum
+           character.</div>
+         <div *ngIf="Password.errors?.maxlength">Password is maximum 10 character.</div>
+       </div>
+     </div>
 
-    <button class="btn btn-dark justify-content-center pt-20" style="margin-top: 3%;margin-left: 35%;  ; width: max-content;" type="submit" (click)="signin()"
-      [class.disabled]="!contactForm.valid">SignIn</button>
-      <!-- <button class="btn btn-primary" type="forget password" (click)="forgetPassword()"
+     <button class="btn btn-dark justify-content-center pt-20"
+       style="margin-top: 3%;margin-left: 35%;  ; width: max-content;" type="submit" (click)="signin()"
+       [class.disabled]="!contactForm.valid">SignIn</button>
+     <!-- <button class="btn btn-primary" type="forget password" (click)="forgetPassword()"
       [class.disabled]="!contactForm.valid">Submit</button> -->
-      <div class="text-center mt-3 mb-5 pb-1">
-        
-        <a class=" " style="color: black;" href="#!">Forgot password?</a>
-      </div>
+     <div class="text-center mt-3 mb-5 pb-1">
 
-      <div class="d-flex align-items-center justify-content-center  mt-3 pb-4">
-        <p class="mb-0 me-2">Don't have an account?</p>
-        <button type="button" class="btn btn-outline-dark">Create new</button>
-      </div>
-    </form>
-</div>
+       <a class=" " style="color: black;" href="#!">Forgot password?</a>
+     </div>
+
+     <div class="d-flex align-items-center justify-content-center  mt-3 pb-4">
+       <p class="mb-0 me-2">Don't have an account?</p>
+       <button type="button" class="btn btn-outline-dark">Create new</button>
+     </div>
+   </form>
+ </div>

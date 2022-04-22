@@ -10,16 +10,20 @@ import { VerificationService } from './verification.service';
 export class AppComponent {
   title = 'e-auction-angular';
   data:any;
+
+  customerRole:any;
+
   constructor(private _router:Router){
+     this.customerRole=sessionStorage.getItem('customerType');
     this.data = _router.getCurrentNavigation()?.extras.state
   }
-  // public customerType():boolean{
+  public customerType():boolean{
 
-  //   if(sessionStorage.getItem('customerType') == "Buyer")
-  //       return true
-  //   else
-  //      return false
-  // }
+    if(sessionStorage.getItem('customerType') == "Buyer")
+        return true
+    else
+       return false
+  }
   // public isloggedIn(){
   //   if(localStorage.getItem('jwtToken'))
   //     return true
