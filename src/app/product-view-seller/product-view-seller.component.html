@@ -1,6 +1,28 @@
-<div class="container">
+<div *ngFor="let data of dataList; index as i" class="container mt-5">
+    <div class="row ">
+        <div class="col col-5">
+            <img src="{{data.productImage}}" class="img-fluid" alt="">
+        </div>
+        <div class="col col-4">
+            <div class="form-group">
+                <h2>{{data.productName | uppercase}}</h2>
+                <h5>Description:</h5>
+                <p>{{data.productDesc}}</p>
+            </div>
+        </div>
+        <div class="col col-3">
+            <div class="form-group mt-4">
+                <button routerLink="update-product/{{data._id}}" class="btn btn-outline-primary"><i class="fas fa-pen text-dark"><span class="text-dark ml-3">EDIT</span></i></button>
+                <button (click)="deleteProduct(data._id,i)" class="btn btn-outline-danger ml-2"><i class="fas fa-trash-alt text-dark"><span class="text-dark ml-3">DELETE</span></i></button>
+                <button routerLink="/view-bids/{{data._id}}" class="btn btn-outline-success ml-2"><i class="fas fa-eye text-primary"><span class="text-dark ml-3">View Bids</span></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container">
     <div *ngFor="let data of dataList; index as i" class="row card">
-        <!-- <div *ngFor="let data of dataList"> -->
+        <div *ngFor="let data of dataList">
         <div class="col col-4 ">
             <div class="card-img">
                 <img src="{{data.productImage}}" class="img-fluid" alt="">
@@ -14,33 +36,9 @@
             <div>
                 <i (click)="deleteProduct(data._id,i)" style='font-size:24px' class='fas'>&#xf1f8;</i>
                 <a routerLink="update-product/{{data._id}}"><i style='font-size:24px' class='fas'>&#xf303;</i></a>
-            </div>                                                                                                                                    
+                <a routerLink="/view-bids/{{data._id}}">View All Bigs</a>
+            </div>
         </div>
 
-        <!-- <div class="card-img">
-                <img src="{{data.productImage}}" alt="">
-            </div>
-            <div class="card-text">
-                <h3>{{data.productName}}</h3>
-                <p>{{data.productDesc}}</p>
-            </div>
-            <div>
-                <i style='font-size:24px' class='fas'>&#xf1f8;</i>
-                <a routerLink="update-product/{{data._id}}"><i style='font-size:24px' class='fas'>&#xf303;</i></a>
-            </div>  -->
-        <!-- </div> -->
     </div>
-    <!-- <div class="col-md-12">
-            <div class="card card-2">
-                <h3>UI Components</h3>
-                <p>Tabs, buttons, inputs, lists, cards, and more! A comprehensive library of mobile UI components, ready to go.</p>
-
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="card card-3">
-                <h3>Theming</h3>
-                <p>Learn how to easily customize and modify your app’s design to fit your brand across all mobile platform styles.</p>
-            </div>
-        </div> -->
-</div>
+</div> -->

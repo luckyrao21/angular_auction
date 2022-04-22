@@ -14,8 +14,8 @@
                 <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">Category</label>
                 </div>
-                <select *ngFor="let item of categoryList" [(ngModel)]="productCategory" class="custom-select" id="inputGroupSelect01">
-                       <option [ngValue]="item.categoryName" >{{item.categoryName}}</option>
+                <select [(ngModel)]="productCategory" class="custom-select" id="inputGroupSelect01">
+                       <option *ngFor="let item of categoryList" [ngValue]="item.categoryName" >{{item.categoryName}}</option>
                        <!-- <option selected>Choose...</option> -->
                        <!-- <option value="Paining">Paitning</option> -->
                        <!-- <option value="Diamonds">Diamonds</option> -->
@@ -28,16 +28,12 @@
                 <input [(ngModel)]="productInitialPrice" type="text" placeholder="Initial Price" class="form-control">
             </div>
             <div class="form-group">
-                <input [(ngModel)]="productExpactaedPrice" type="text" placeholder="Expacted Price" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="">Auction Start Date: </label>
+                <label for="">Auction Start Date:  </label>
                 <!-- <input type="datetime-local" id="startime" name="startime"> -->
                 <input [(ngModel)]="startDate" type="date" id="startime" name="startime">
-
             </div>
             <div class="form-group">
-                <label for="">Auction End Date: </label>
+                <label for="">Auction End Date:  </label>
                 <input [(ngModel)]="endDate" type="date" id="endTime" name="endTime">
                 <!-- <input type="time" id="endTime" name="endTime"> -->
             </div>
@@ -45,7 +41,6 @@
                 <label for="">Product Image: </label>
                 <input (change)="onSelect($event)" type="file" name="productImage">
                 <img [src]="image" alt="Selected Image" style="width: 70px;height: 70px;">
-
             </div>
             <div class="form-group justify-content-end" style="display: right;">
                 <button class="btn btn-primary " (click)="addNewProduct()">Add Product</button>

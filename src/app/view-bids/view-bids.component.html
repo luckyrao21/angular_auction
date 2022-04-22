@@ -1,0 +1,18 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>S.No.</th>
+            <th>Customer</th>
+            <th>Max Bids</th>
+            <th>Bid Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataList; index as i">
+            <td>{{i+1}}</td>
+            <td>{{data.buyersId.username}}</td>
+            <td>{{data.priceValue}}</td>
+            <td><button>Lock Bid</button></td>
+        </tr>
+    </tbody>
+</table>

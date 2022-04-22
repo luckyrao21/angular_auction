@@ -4,8 +4,9 @@ import { observable } from 'rxjs';
 
 @Injectable()
 export class VerificationService {
-  signupUrl="http://eauction-api.herokuapp.com/customer/signup"
-  signinUrl="https://eauction-api.herokuapp.com/customer/signin"
+  signupUrl="https://humaracode.herokuapp.com/customer/signup"
+  signinUrl="https://humaracode.herokuapp.com/customer/signin"
+
 
   constructor(private _http:HttpClient) { }
 

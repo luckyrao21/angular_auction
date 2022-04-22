@@ -10,8 +10,6 @@ import { SellerService } from './seller.service';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { BuyerService } from './buyer.service';
 import { PlaceorderComponent } from './placeorder/placeorder.component';
-import { TokenInterceptorService } from './token-interceptor.service'
-import { FormsModule } from '@angular/forms';
 import { HomeNavComponent } from './home-nav/home-nav.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
@@ -23,6 +21,10 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { ProductViewSellerComponent } from './product-view-seller/product-view-seller.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { SearchProductComponent } from './search-product/search-product.component';
+import { TokenInterceptorService } from './token-interceptor.service';
+import { ParticularProductComponent } from './particular-product/particular-product.component';
+import { ViewBidsComponent } from './view-bids/view-bids.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +41,10 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     SignupComponent,
     HomeMainContentComponent,
     HomeFooterComponent,
-    SecNavComponent
-
+    SecNavComponent,
+    SearchProductComponent,
+    ParticularProductComponent,
+    ViewBidsComponent
 
   ],
   imports: [
@@ -54,13 +58,12 @@ import { UpdateProductComponent } from './update-product/update-product.componen
      provide:HTTP_INTERCEPTORS,
      useClass:TokenInterceptorService,
      multi:true
-   }
+   },
   SellerService,
   BuyerService,
   VerificationService
 
 ],
-
   bootstrap: [AppComponent]
 })
 export class AppModule{

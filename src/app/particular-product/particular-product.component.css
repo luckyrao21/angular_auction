@@ -1,3 +1,19 @@
+.product-img {
+    background-color: whitesmoke;
+    /* box-shadow: 0px 0px 30px black; */
+    /* box-shadow: 0 10px 30 px rgba(42, 86, 244, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-sizing: border-box;
+}
+
+.product-details {
+    background-color: whitesmoke;
+    /* box-shadow: 0px 0px 30px black; */
+    /* box-shadow: 0 10px 30 px rgba(42, 86, 244, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-sizing: border-box;
+}
+
 @import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i');
 body {
     font-family: 'Muli', sans-serif;
@@ -9,12 +25,12 @@ body {
 }
 
 .wsk-cp-product {
-    background: rgb(93, 165, 243);
+    background: #fff;
     padding: 15px;
     width: 100%;
     /* height: 100px; */
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(42, 86, 244, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     position: relative;
     margin: 20px auto;
 }
@@ -162,4 +178,28 @@ body {
     .col-md-3 {
         width: 100%;
     }
+}
+
+.heading {
+    color: #000000;
+    /* background: #333333; */
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, rgb(253, 253, 253) 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+.image {
+    border-radius: 25px 25px 25px 25px;
+}
+
+.product select {
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.desc {
+    font-size: larger;
+}
+
+.particuler-product {
+    -webkit-box-shadow: 1px 3px 10px 6px rgba(0, 0, 0, 0.57);
+    box-shadow: 1px 3px 10px 6px rgba(0, 0, 0, 0.57);
+    border-radius: 35px 35px 35px 35px;
 }

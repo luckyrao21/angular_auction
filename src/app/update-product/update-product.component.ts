@@ -12,7 +12,6 @@ export class UpdateProductComponent implements OnInit {
   productCategory: string = '';
   productDesc: string = '';
   productInitialPrice: string = "";
-  productExpactaedPrice: string = "";
   startDate: string = '';
   endDate: string = '';
   image: any = '';
@@ -20,6 +19,7 @@ export class UpdateProductComponent implements OnInit {
   productId:any;
   oldImage:any;
   creator:any = sessionStorage.getItem('_id');
+  categoryList:any;
 
   constructor(private route: ActivatedRoute, private router: Router, private product: ProductService) {
     this.productId = this.route.snapshot.paramMap.get('id');
@@ -27,16 +27,22 @@ export class UpdateProductComponent implements OnInit {
 
     this.product.viewProductById(this.productId).subscribe(data=>{
       console.log(data);
-       this.productName = data[0].productName;
-       this.productCategory = data[0].categoryName;
-       this.productDesc = data[0].productDesc;
-       this.productInitialPrice = data[0].productInitialPrice;
-       this.startDate = data[0].startTime;
-       this.endDate = data[0].endTime;
-       this.productImage = data[0].productImage;
-       this.oldImage = data[0].productImage;
-       this.image = data[0].productImage;
+       this.productName = data.productName;
+       this.productCategory = data.categoryName;
+       this.productDesc = data.productDesc;
+       this.productInitialPrice = data.productInitialPrice;
+       this.startDate = data.startTime;
+       this.endDate = data.endTime;
+       this.productImage = data.productImage;
+       this.oldImage = data.productImage;
+       this.image = data.productImage;
     });
+
+    this.product.viewCategory().subscribe(data=>{
+      if(!data.error){
+        this.categoryList = data;
+      }
+   });
    }
 
   ngOnInit(): void {
@@ -61,7 +67,7 @@ export class UpdateProductComponent implements OnInit {
     formData.append('productInitialPrice', this.productInitialPrice);
     // formData.append('creator',this.creator);
     formData.append('startTime',this.startDate);
-    formData.append('endTime',this.endDate);          
+    formData.append('endTime',this.endDate);
     formData.append('categoryName',this.productCategory);
     formData.append('productImage',this.productImage);
     formData.append('productId',this.productId);
@@ -83,4 +89,3 @@ export class UpdateProductComponent implements OnInit {
   }
 
 }
-                                                                                          

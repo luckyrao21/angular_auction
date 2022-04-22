@@ -1,4 +1,11 @@
-body {
+.container {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 5vh 5vh 5vh 5vh;
+    padding: 5vh;
+}
+
+
+/* body {
     font-family: 'Nunito', sans-serif;
     padding: 50px;
 }
@@ -10,7 +17,7 @@ body {
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     padding: 14px 80px 18px 36px;
     cursor: pointer;
-    /* float: left; */
+    float: left;
     margin: 10px;
 }
 
@@ -24,19 +31,19 @@ body {
 }
 
 
-/* .card img {
+.card img {
     position: absolute;
     top: 20px;
     right: 15px;
     max-height: 120px;
-} */
+}
 
 .card-img img {
     height: 230px;
     width: 100%;
-    /* border: 2px solid plum; */
+    border: 2px solid plum;
     background-repeat: no-repeat;
-    /* float: left; */
+    float: left;
 }
 
 .card-text h3 p {
@@ -48,12 +55,12 @@ body {
 .col-4 {
     border: 2px solid blue;
     height: 100%;
-    /* float: left; */
+    float: left;
 }
 
 .col-6 {
     border: 2px solid black;
-    /* float: left; */
+    float: left;
 }
 
 .col-2 {
@@ -68,4 +75,4 @@ body {
     .card {
         margin: 20px;
     }
-}
+} */
