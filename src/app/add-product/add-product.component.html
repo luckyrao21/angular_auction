@@ -1,0 +1,60 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col col-2">
+        </div>
+        <div class="col col-8 forum mt-5 pd-5">
+            <!-- <form class="forum mt-5 pd-5" action=""> -->
+            <div class="form-group">
+                <h2 style="text-align: center;">Add New Product</h2>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="productName" type="text" placeholder="Prodct Name" class="form-control">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                </div>
+                <select *ngFor="let item of categoryList" [(ngModel)]="productCategory" class="custom-select" id="inputGroupSelect01">
+                       <option [ngValue]="item.categoryName" >{{item.categoryName}}</option>
+                       <!-- <option selected>Choose...</option> -->
+                       <!-- <option value="Paining">Paitning</option> -->
+                       <!-- <option value="Diamonds">Diamonds</option> -->
+                </select>
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="productDesc" type="text" placeholder="Description" class="form-control">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="productInitialPrice" type="text" placeholder="Initial Price" class="form-control">
+            </div>
+            <div class="form-group">
+                <input [(ngModel)]="productExpactaedPrice" type="text" placeholder="Expacted Price" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Auction Start Date: </label>
+                <!-- <input type="datetime-local" id="startime" name="startime"> -->
+                <input [(ngModel)]="startDate" type="date" id="startime" name="startime">
+
+            </div>
+            <div class="form-group">
+                <label for="">Auction End Date: </label>
+                <input [(ngModel)]="endDate" type="date" id="endTime" name="endTime">
+                <!-- <input type="time" id="endTime" name="endTime"> -->
+            </div>
+            <div class="form-group">
+                <label for="">Product Image: </label>
+                <input (change)="onSelect($event)" type="file" name="productImage">
+                <img [src]="image" alt="Selected Image" style="width: 70px;height: 70px;">
+
+            </div>
+            <div class="form-group justify-content-end" style="display: right;">
+                <button class="btn btn-primary " (click)="addNewProduct()">Add Product</button>
+                <button class="btn btn-danger ml-2">Cancel</button>
+            </div>
+            <!-- </form> -->
+        </div>
+        <div class="col col-2">
+
+        </div>
+    </div>
+</div>

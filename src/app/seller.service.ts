@@ -6,11 +6,11 @@ export class SellerService {
   constructor(private http:HttpClient) { }
 
   // updateProfileApi="https://eauction-api.herokuapp.com/customer/updateProfile"
-  updateProfileApi= "http://localhost:3000/customer/updateProfile"
+  updateProfileApi= "https://humaracode.herokuapp.com/customer/updateProfile"
 
-  viewOnecustomer="http://localhost:3000/admin/show-one-customer"
+  viewOnecustomer="https://humaracode.herokuapp.com/admin/show-one-customer"
 
-  forgotPasswordApi="http://localhost:3000/customer/forgot-password"
+  forgotPasswordApi="https://humaracode.herokuapp.com/customer/forgot-password"
 
   // resetPasswordApi="http://localhost:3000/customer/reset-Password";
 
@@ -28,11 +28,6 @@ export class SellerService {
     // let cusotmerId = sessionStorage.getItem("_id");
     return this.http.post(this.forgotPasswordApi,{email:email})
   }
-
-
-  
-
-
 
 
 }

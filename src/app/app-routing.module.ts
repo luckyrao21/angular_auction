@@ -6,6 +6,14 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { RevertComplaintComponent } from './revert-complaint/revert-complaint.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { ViewComplaintComponent } from './view-complaint/view-complaint.component';
+import { HomeNavComponent } from './home-nav/home-nav.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
+import { AddProductComponent } from './add-product/add-product.component';
+import { ProductViewSellerComponent } from './product-view-seller/product-view-seller.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { ViewProductComponent } from './view-product/view-product.component';
+import { SearchProductComponent } from './search-product/search-product.component';
 
 const routes: Routes = [
   {path:'update-profile', component:UpdateProfileComponent},
@@ -13,11 +21,16 @@ const routes: Routes = [
   {path:'place-order', component:PlaceorderComponent},
   {path:'add-complaint', component:AddcomplaintComponent},
   {path:'view-complaint', component:ViewComplaintComponent},
-  {path:'view-complaint/revert-complaint/:id',component:RevertComplaintComponent}
-
-
-
+  {path:'view-complaint/revert-complaint/:id',component:RevertComplaintComponent},
+  {path:"signin",component:SigninComponent},
+  {path:"signup",component:SignupComponent},
+  {path:"add-product", component: AddProductComponent},
+  {path:"view-product", component: ViewProductComponent},
+  {path: "view-product-by-seller",component:ProductViewSellerComponent},
+  {path: "view-product-by-seller/update-product/:id", component: UpdateProductComponent},
+  {path:"serch-product", component: SearchProductComponent}
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
