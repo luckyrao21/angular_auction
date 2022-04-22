@@ -10,6 +10,7 @@ import { VerificationService } from './verification.service';
 export class AppComponent {
   title = 'e-auction-angular';
   data:any;
+
   customerRole:any;
 
   constructor(private _router:Router){

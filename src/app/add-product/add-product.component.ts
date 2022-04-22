@@ -11,7 +11,6 @@ export class AddProductComponent implements OnInit {
   productCategory: string = '';
   productDesc: string = '';
   productInitialPrice: string = "";
-  productExpactaedPrice: string = "";
   startDate: string = '';
   endDate: string = '';
   image: any = '';

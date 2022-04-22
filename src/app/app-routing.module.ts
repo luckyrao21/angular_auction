@@ -14,6 +14,12 @@ import { ProductViewSellerComponent } from './product-view-seller/product-view-s
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { ViewProductComponent } from './view-product/view-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
+import { ParticularProductComponent } from './particular-product/particular-product.component';
+import { AppComponent } from './app.component';
+import { ViewBidsComponent } from './view-bids/view-bids.component';
+
+
+
 
 const routes: Routes = [
   {path:'update-profile', component:UpdateProfileComponent},
@@ -28,9 +34,11 @@ const routes: Routes = [
   {path:"view-product", component: ViewProductComponent},
   {path: "view-product-by-seller",component:ProductViewSellerComponent},
   {path: "view-product-by-seller/update-product/:id", component: UpdateProductComponent},
-  {path:"serch-product", component: SearchProductComponent}
-];
-
+  {path:"serch-product", component: SearchProductComponent},
+  {path: "view-product/product-by-id/:id",component: ParticularProductComponent},
+  {path: "view-product/product-by-id/:ids/product-by-id/:id",component: ParticularProductComponent},
+  {path: "view-bids/:id", component: ViewBidsComponent}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

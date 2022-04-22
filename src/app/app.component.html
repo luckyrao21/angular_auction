@@ -9,11 +9,12 @@
 <app-home-main-content></app-home-main-content>
 
 <router-outlet></router-outlet>
+
 <div *ngIf="customerType()">
-  <app-view-product></app-view-product>
+    <app-view-product></app-view-product>
 </div>
 
 <div *ngIf="customerRole !='Buyer' && customerRole !='Seller'">
-  <app-product-view-seller></app-product-view-seller>
+    <app-product-view-seller></app-product-view-seller>
 </div>
 <app-home-footer></app-home-footer>

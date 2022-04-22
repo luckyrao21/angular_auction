@@ -25,6 +25,8 @@ import { ProductViewSellerComponent } from './product-view-seller/product-view-s
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { SearchProductComponent } from './search-product/search-product.component';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { ParticularProductComponent } from './particular-product/particular-product.component';
+import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { AboutComponent } from './about/about.component';
 
 @NgModule({
@@ -47,6 +49,8 @@ import { AboutComponent } from './about/about.component';
     HomeFooterComponent,
     SecNavComponent,
     SearchProductComponent,
+    ParticularProductComponent,
+    ViewBidsComponent,
     AboutComponent
 
   ],

@@ -14,14 +14,16 @@ export class ProductViewSellerComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {
+  }
+
   deleteProduct(productId:any, index:any){
     if(confirm("Are You Sure")){
       this.product.delete(productId).subscribe(data=>{
         if(data.Delete){
           data.slice(index,1)
-          this.ngOnInit();
            alert("Product Deleted Successfully...")
-
+           this.ngOnInit();
         }
         else
            alert("Product Deleted Successfully...")
@@ -29,7 +31,6 @@ export class ProductViewSellerComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-  }
+
 
 }
