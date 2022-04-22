@@ -1,6 +1,6 @@
 .card{
-    background:linear-gradient(   rgba(7, 248, 248, 0.28),#8FD0D5 ); ;
-    /* background-color:#8FD0D5 ; */
-    
+    /* background:linear-gradient(   rgba(7, 248, 248, 0.28),#8FD0D5 ); ; */
+    background-color:#ebfeff ;
+    border-radius: 25px;
     margin-top: 10%;
 }

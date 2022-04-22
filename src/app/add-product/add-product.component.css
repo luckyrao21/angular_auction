@@ -1,9 +1,9 @@
 .forum {
-  background-color: rgb(247, 243, 243);
+  background-color: rgb(227, 250, 252);
   /* height: 100%; */
   /* box-shadow: 10px black; */
   box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  border-radius: 10px;
+  border-radius: 25px;
   padding: 10px;
 }

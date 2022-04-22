@@ -24,8 +24,16 @@
       <li class="nav-item justify-content-center  ml-3 mr-3">
         <a class="nav-link" href="#">About</a>
       </li>
+      <div *ngIf="customerType() && isLoggedIn()"class="dropdown">
+        <button  type="button " class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a routerLink="add-product" class="dropdown-item">Add Product</a>
+          <a routerLink="view-product" class="dropdown-item">View Product</a>
+          <a routerLink="view-product-by-seller" class="dropdown-item">All Product</a>
 
-      <div *ngIf="customerType() && isLoggedIn()" class="dropdown ">
+        </div>
+      </div>
+      <!-- <div *ngIf="customerType() && isLoggedIn()" class="dropdown ">
         <button class="dropbtn ">Dropdown
           <i class="fa fa-caret-down "></i>
         </button>
@@ -34,7 +42,7 @@
           <a routerLink="view-product">View Product</a>
           <a routerLink="view-product-by-seller">Your All Product</a>
         </div>
-      </div>
+      </div> -->
     </ul>
     <ul class="navbar-nav ml-auto ">
       <li style="padding: 10px;"><i routerLink="serch-product" style='font-size:24px' class='fas'>&#xf002;</i></li>
