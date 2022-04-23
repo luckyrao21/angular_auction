@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class AdminService {
 
-  addComplaintApi="https://humaracode.herokuapp.com/complaint/add-complaint";
-  viewComplaintApi="https://humaracode.herokuapp.com/complaint/all-complaint-list";
-  revertComplaintApi="http://localhost:3000/complaint/revert-complaint";
+  addComplaintApi="https://real-bidhouse.herokuapp.com/complaint/add-complaint";
+  viewComplaintApi="https://real-bidhouse.herokuapp.com/complaint/all-complaint-list";
+  revertComplaintApi="https://real-bidhouse.herokuapp.com/complaint/revert-complaint";
   // viewComplaintApi="http://localhost:3000/complaint/all-complaint-list"
   // addcomplaintApi="http://localhost:3000/complaint/add-complaint";
 

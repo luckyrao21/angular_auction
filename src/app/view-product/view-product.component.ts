@@ -7,32 +7,32 @@ import { ProductService } from '../product.service';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
-  dataList:any[] = [];
+  dataList: any[] = [];
 
   constructor(private product: ProductService) {
-    this.product.viewProduct().subscribe(data=>{
+    this.product.viewProduct().subscribe(data => {
       console.log(data);
-      this.dataList= data
+      this.dataList = data
     });
   }
 
 
-  public beforeStarting(startTime:any):boolean{
+  public beforeStarting(startTime: any): boolean {
     let temp = Date.parse(startTime);
-    if(Date.now() <= temp)
-       return true
+    if (Date.now() <= temp)
+      return true
     else
-       return false
+      return false
   }
 
-  public afterStarting(startTime:any, endTime:any):boolean{
+  public afterStarting(startTime: any, endTime: any): boolean {
     let startTemp = Date.parse(startTime);
     let endTemp = Date.parse(endTime);
 
-    if(Date.now() >= startTemp && Date.now() <= endTemp)
-       return true
+    if (Date.now() >= startTemp && Date.now() <= endTemp)
+      return true
     else
-       return false
+      return false
   }
 
   ngOnInit(): void {

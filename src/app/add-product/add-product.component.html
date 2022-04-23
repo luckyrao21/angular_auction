@@ -1,169 +1,203 @@
-<!-- <div class="container mt-5"style="padding-top: 3%; padding-left: 5%; padding-right: 3%; width: fit-content; position: absolute;z-index: 1000; justify-content: center;  margin-left: 550px;">
+<!-- <div class="container mt-5" style="padding-top: 3%; padding-left: 5%; padding-right: 3%; width: fit-content; position: absolute;z-index: 1000; justify-content: center;  margin-left: 550px;">
     <div class="row">
         <div class="col col-2">
         </div>
         <div class="col col-8 forum mt-5 pd-5">
-            <!-- <form class="forum mt-5 pd-5" action=""> 
-            <div class="form-group">
-                <h2 style="text-align: center;">Add New Product</h2>
-            </div>
-            <div class="form-group">
-                <input [(ngModel)]="productName" type="text" placeholder="Prodct Name" class="form-control">
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">Category</label>
+            <form class="forum mt-5 pd-5" action="">
+                <div class="form-group">
+                    <h2 style="text-align: center;">Add New Product</h2>
                 </div>
-                <select [(ngModel)]="productCategory" class="custom-select" id="inputGroupSelect01">
+                <div class="form-group">
+                    <input [(ngModel)]="productName" type="text" placeholder="Prodct Name" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Category</label>
+                    </div>
+                    <select [(ngModel)]="productCategory" class="custom-select" id="inputGroupSelect01">
                        <option *ngFor="let item of categoryList" [ngValue]="item.categoryName" >{{item.categoryName}}</option>
-                       <!-- <option selected>Choose...</option> -->
-                       <!-- <option value="Paining">Paitning</option> -->
-                       <!-- <option value="Diamonds">Diamonds</option> 
                 </select>
-            </div>
-            <div class="form-group">
-                <input [(ngModel)]="productDesc" type="text" placeholder="Description" class="form-control">
-            </div>
-            <div class="form-group">
-                <input [(ngModel)]="productInitialPrice" type="text" placeholder="Initial Price" class="form-control">
-            </div>
-            <div class="form-group">
-<<<<<<< HEAD
-                <label for="">Auction Start Date:  </label>
-                <!-- <input type="datetime-local" id="startime" name="startime"> -->
-=======
-                <input [(ngModel)]="productExpactaedPrice" type="text" placeholder="Expacted Price" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="">Auction Start Date: </label>
-                <!-- <input type="datetime-local" id="startime" name="startime"> 
->>>>>>> 95102b2734285ab9496041ec67644e6804911edf
-                <input [(ngModel)]="startDate" type="date" id="startime" name="startime">
-            </div>
-            <div class="form-group">
-                <label for="">Auction End Date:  </label>
-                <input [(ngModel)]="endDate" type="date" id="endTime" name="endTime">
-                <!-- <input type="time" id="endTime" name="endTime"> 
-            </div>
-            <div class="form-group">
-                <label for="">Product Image: </label>
-                <input (change)="onSelect($event)" type="file" name="productImage">
-                <img [src]="image" alt="Selected Image" style="width: 70px;height: 70px;">
-            </div>
-            <div class="form-group justify-content-end" style="display: right;">
-                <button class="btn btn-primary " (click)="addNewProduct()">Add Product</button>
-                <button class="btn btn-danger ml-2">Cancel</button>
-            </div>
-            <!-- </form>
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="productDesc" type="text" placeholder="Description" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="productInitialPrice" type="text" placeholder="Initial Price" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Auction Start Date: </label>
+                    <input type="datetime-local" id="startime" name="startime">
+                    <input [(ngModel)]="startDate" type="date" id="startime" name="startime">
+                </div>
+                <div class="form-group">
+                    <label for="">Auction End Date:  </label>
+                    <input [(ngModel)]="endDate" type="date" id="endTime" name="endTime">
+                    <input type="time" id="endTime" name="endTime">
+                </div>
+                <div class="form-group">
+                    <label for="">Product Image: </label>
+                    <input (change)="onSelect($event)" type="file" name="productImage">
+                    <img [src]="image" alt="Selected Image" style="width: 70px;height: 70px;">
+                </div>
+                <div class="form-group justify-content-end" style="display: right;">
+                    <button class="btn btn-primary " (click)="addNewProduct()">Add Product</button>
+                    <button class="btn btn-danger ml-2">Cancel</button>
+                </div>
+            </form>
         </div>
         <div class="col col-2">
 
         </div>
     </div>
 </div> -->
-<div class=" row justify-content-center align-items-center h-80 w-100" style="position: absolute;z-index: 1000;">
-    <div class="col-12 col-lg-9 col-xl-7">
-      <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
-        <div class="card-body p-4 p-md-5">
-          <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Product</h3>
-          <form #contactForm="ngForm">
-  
-            <div class="row">
-              <div class="col-md-6 mb-4">
-  
-                <div class="form-outline">
-                  <input  [(ngModel)]="productName" type="text" placeholder="Prodct Name" class="form-control form-control-lg" />
-                 
-                </div>
-  
-              </div>
-              <div class="col-md-6 mb-4">
-  
-                <div class="form-outline">
-                    <div class="input-group-prepend">
-                        <label class="form-control form-control-lg" for="inputGroupSelect01">Category</label>
-                    </div>
-                    <select *ngFor="let item of categoryList" [(ngModel)]="productCategory" class="custom-select" id="inputGroupSelect01">
-                           <option [ngValue]="item.categoryName" >{{item.categoryName}}</option>
-                           <!-- <option selected>Choose...</option> -->
-                           <!-- <option value="Paining">Paitning</option> -->
-                           <!-- <option value="Diamonds">Diamonds</option>--> 
-                    </select>
-                </div>
-  
-              </div>
-  
-            </div>
-  
-            <div class="row">
-              <div class="col-md-6 mb-4 ">
-               
-                  <div class="form-outline">
-                    <input [(ngModel)]="productDesc" type="text" placeholder="Description" class="form-control form-control-lg">
 
-                </div>
-              </div>
-              <div class="col-md-6 mb-4">
-  
-                <div class="form-outline">
-                    <input [(ngModel)]="productInitialPrice" type="text" placeholder="Initial Price" class="form-control form-control-lg">
-  
-                </div>
-  
-              </div>
-            </div>
-  
-            <div class="row">
-              <div class="col-md-6 mb-4 pb-2">
-                <div class="form-outline">
-                    <label for="">Auction End Date: </label>
-                    <input [(ngModel)]="endDate" type="date" id="endTime" name="endTime">
-                    <!-- <input type="time" id="endTime" name="endTime"> -->
-                  </div>
-                
-  
-              </div>
-              <div class="col-md-6 mb-4 pb-2">
-  
-                <div class="form-outline">
-                    <label for="">Auction Start Date: </label>
-                    <!-- <input type="datetime-local" id="startime" name="startime"> -->
-                    <input [(ngModel)]="startDate" type="date" id="startime" name="startime">
-    
-                </div>
-                
-              </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 mb-4 pb-2">
-    
-                    <div class="form-outline">
-                        <input [(ngModel)]="productExpactaedPrice" type="text" placeholder="Expacted Price" class="form-control form-control-lg">
-    
+<div class="row justify-content-center align-items-center h-80 w-100">
+    <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius:
+      15px;">
+            <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add Product</h3>
+                <form #contactForm="ngForm">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+
+                            <div class="form-outline">
+                                <input [(ngModel)]="productName" type="text" placeholder="Product Name" class="form-control
+                  form-control-lg" [ngModelOptions]="{standalone: true}" />
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 mb-4">
+
+                            <div class="form-outline">
+                                <div class="input-group-prepend">
+                                    <label class="form-control form-control-lg" for="inputGroupSelect01">Category</label>
+                                </div>
+                                <select [(ngModel)]="productCategory" class="custom-select" id="inputGroupSelect01" [ngModelOptions]="{standalone: true}">
+                  <option *ngFor="let item of categoryList"
+                    [ngValue]="item.categoryName">{{item.categoryName}}</option>
+                </select>
+                            </div>
+                        </div>
                     </div>
-    
-                </div>
-                <div class="col-md-6 mb-4 pb-2">
-    
-                  <div class="form-outline">
-                    <label for="">Product Image: </label>
-                    <input (change)="onSelect($event)" type="file" name="productImage">
-                    <img [src]="image" alt="Selected Image" style="width: 70px;height: 70px;">
-    
-                  </div>
-                  
-                </div>
-              </div>
-              
-  
-  
-            <div class="mt-4 pt-2">
-                <button class="btn btn-primary " (click)="addNewProduct()">Add Product</button>
-                <button class="btn btn-danger ml-2">Cancel</button>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+
+                            <div class="form-outline">
+                                <input [(ngModel)]="productDesc" type="text" placeholder="Description" class="form-control
+                  form-control-lg" [ngModelOptions]="{standalone: true}">
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+
+                            <div class="form-outline">
+                                <input [(ngModel)]="productInitialPrice" type="text" placeholder="Initial Price" class="form-control
+                  form-control-lg" [ngModelOptions]="{standalone: true}">
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+                            <div class="form-outline">
+                                <label for="">Auction Start Date: </label>
+                                <!-- <input type="datetime-local" id="startime" name="startime"> -->
+                                <input [(ngModel)]="startDate" type="date" id="startime" name="startime" [ngModelOptions]="{standalone: true}">
+                                <br>
+                                <label for="">Auction Start Time: </label>
+                                <select [(ngModel)]="startHours" [ngModelOptions]="{standalone:
+                  true}" name="" id="" class="btn">
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4 pb-2">
+                            <div class="form-outline">
+                                <label for="">Auction End Date: </label>
+                                <input [(ngModel)]="endDate" [ngModelOptions]="{standalone:
+                  true}" type="date" id="endTime" name="endTime">
+                                <br>
+                                <label for="">Auction End Time: </label>
+                                <select [(ngModel)]="endHours" [ngModelOptions]="{standalone:
+                  true}" name="" id="" class="btn">
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-4 pb-2">
+
+                            <div class="form-outline">
+                                <label for="">Product Image: </label>
+                                <input (change)="onSelect($event)" type="file" name="productImage">
+                                <img [src]="image" alt="Selected Image" style="width:
+                  70px;height: 70px;">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="mt-4 pt-2">
+                        <button class="btn btn-primary" (click)="addNewProduct()">Add
+              Product</button>
+                        <button class="btn btn-danger ml-2">Cancel</button>
+                    </div>
+
+                </form>
             </div>
-  
-          </form>
         </div>
-      </div>
     </div>
-  </div>
+</div>

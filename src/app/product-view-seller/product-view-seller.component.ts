@@ -30,7 +30,4 @@ export class ProductViewSellerComponent implements OnInit {
       });
     }
   }
-
-
-
 }

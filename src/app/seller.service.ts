@@ -6,11 +6,11 @@ export class SellerService {
   constructor(private http:HttpClient) { }
 
   // updateProfileApi="https://eauction-api.herokuapp.com/customer/updateProfile"
-  updateProfileApi= "https://humaracode.herokuapp.com/customer/updateProfile"
+  updateProfileApi= "https://real-bidhouse.herokuapp.com/customer/updateProfile"
 
-  viewOnecustomer="https://humaracode.herokuapp.com/admin/show-one-customer"
+  viewOnecustomer="https://real-bidhouse.herokuapp.com/admin/show-one-customer"
 
-  forgotPasswordApi="https://humaracode.herokuapp.com/customer/forgot-password"
+  forgotPasswordApi="https://real-bidhouse.herokuapp.com/customer/forgot-password"
 
   // resetPasswordApi="http://localhost:3000/customer/reset-Password";
 
