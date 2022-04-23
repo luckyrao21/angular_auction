@@ -7,10 +7,11 @@ import { ProductService } from '../product.service';
   styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent implements OnInit {
-  productName: string = "";
+  productName: any;
   productCategory: string = '';
   productDesc: string = '';
   productInitialPrice: string = "";
+  productExpactaedPrice: string = "";
   startDate: string = '';
   endDate: string = '';
   image: any = '';

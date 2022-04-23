@@ -15,27 +15,27 @@ export class SignupComponent implements OnInit {
   customerRoll:String=""
 
   constructor(private _service:VerificationService,private _router:Router) {
-    
+
    }
    public signup(){
      console.log("Signup");
      this._service.signup(this.username,this.email,this.password,this.mobile,this.address,this.customerRoll).subscribe(data=>{
       console.log(this.username);
-      console.log(this.email); 
-      console.log(this.password); 
-      console.log(this.mobile); 
+      console.log(this.email);
+      console.log(this.password);
+      console.log(this.mobile);
       console.log(this.address);
-      console.log(this.customerRoll); 
+      console.log(this.customerRoll);
 
 
-      
+
       console.log(data);
         if(data.err){
          alert('SignUp Failed')
        }
        else{
          console.log(data)
-       alert('SignUp Success')  
+       alert('SignUp Success')
       }
      })
    }

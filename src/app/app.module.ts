@@ -28,6 +28,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { ParticularProductComponent } from './particular-product/particular-product.component';
 import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { AboutComponent } from './about/about.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AboutComponent } from './about/about.component';
     SearchProductComponent,
     ParticularProductComponent,
     ViewBidsComponent,
-    AboutComponent
+    AboutComponent,
+    HomePageComponent
 
   ],
   imports: [

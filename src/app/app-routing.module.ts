@@ -17,29 +17,30 @@ import { SearchProductComponent } from './search-product/search-product.componen
 import { ParticularProductComponent } from './particular-product/particular-product.component';
 import { AppComponent } from './app.component';
 import { ViewBidsComponent } from './view-bids/view-bids.component';
-
-
-
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-  {path:'update-profile', component:UpdateProfileComponent},
-  {path:'reset-password', component:ResetPasswordComponent},
-  {path:'place-order', component:PlaceorderComponent},
-  {path:'add-complaint', component:AddcomplaintComponent},
-  {path:'view-complaint', component:ViewComplaintComponent},
-  {path:'view-complaint/revert-complaint/:id',component:RevertComplaintComponent},
-  {path:"signin",component:SigninComponent},
-  {path:"signup",component:SignupComponent},
-  {path:"add-product", component: AddProductComponent},
-  {path:"view-product", component: ViewProductComponent},
-  {path: "view-product-by-seller",component:ProductViewSellerComponent},
-  {path: "view-product-by-seller/update-product/:id", component: UpdateProductComponent},
-  {path:"serch-product", component: SearchProductComponent},
-  {path: "view-product/product-by-id/:id",component: ParticularProductComponent},
-  {path: "view-product/product-by-id/:ids/product-by-id/:id",component: ParticularProductComponent},
-  {path: "view-bids/:id", component: ViewBidsComponent}
-]
+  { path: 'update-profile', component: UpdateProfileComponent },
+  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'place-order', component: PlaceorderComponent },
+  { path: 'add-complaint', component: AddcomplaintComponent },
+  { path: 'view-complaint', component: ViewComplaintComponent },
+  { path: 'view-complaint/revert-complaint/:id', component: RevertComplaintComponent },
+  { path: "signin", component: SigninComponent },
+  { path: "signup", component: SignupComponent },
+  { path: "add-product", component: AddProductComponent },
+  { path: "view-product", component: ViewProductComponent },
+  { path: "view-product-by-seller", component: ProductViewSellerComponent },
+  { path: "view-product-by-seller/update-product/:id", component: UpdateProductComponent },
+  { path: "serch-product", component: SearchProductComponent },
+  { path: "view-product/product-by-id/:id", component: ParticularProductComponent },
+  { path: "view-product/product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
+  { path: "view-bids/:id", component: ViewBidsComponent },
+  { path: "", component: HomePageComponent },
+  { path: "product-by-id/:id", component: ParticularProductComponent },
 
+
+]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

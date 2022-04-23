@@ -1,0 +1,9 @@
+<app-home-main-content></app-home-main-content>
+
+<div *ngIf="customerType()">
+    <app-view-product></app-view-product>
+</div>
+
+<div *ngIf="customerRole !='Buyer' && customerRole !='Seller'">
+    <app-view-product></app-view-product>
+</div>

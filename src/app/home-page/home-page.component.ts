@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { VerificationService } from './verification.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.css']
 })
-export class AppComponent {
-  title = 'e-auction-angular';
+export class HomePageComponent implements OnInit {
+
   data:any;
 
   customerRole:any;
@@ -19,6 +18,9 @@ export class AppComponent {
     // alert(this._router.url);
 
   }
+  ngOnInit(): void {
+  }
+
   public customerType():boolean{
 
     if(sessionStorage.getItem('customerType') == "Buyer")
@@ -26,11 +28,5 @@ export class AppComponent {
     else
        return false
   }
-  // public isloggedIn(){
-  //   if(localStorage.getItem('jwtToken'))
-  //     return true
-  //   else
-  //     return false
-  // }
 
 }

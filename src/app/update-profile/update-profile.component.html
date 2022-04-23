@@ -1,66 +1,63 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-          
-          <form #contactForm="ngForm" (ngSubmit)="updateProfile()">
-            <div class="form-group">
-                <label for="firstName">Username</label>
-                <input required minlength="3" maxlength="10" placeholder="Enter Username" [(ngModel)]="username" ngModel name="Username" type="text" #Username="ngModel" class="form-control" id="firstName">
-                <div class="alert alert-danger" *ngIf="Username.touched && !Username.valid">
-                    <div *ngIf="Username.errors?.required">First Name is required.</div>
-                    <div *ngIf="Username.errors?.minlength">First Name is minimum {{ Username.errors?.minlength.requiredLength }} character.</div>
-                    <div *ngIf="Username.errors?.maxlength">First Name is maximum 10 character.</div>
+
+            <form #contactForm="ngForm" (ngSubmit)="updateProfile()">
+                <div class="form-group">
+                    <label for="firstName">Username</label>
+                    <input required minlength="3" maxlength="10" placeholder="Enter Username" [(ngModel)]="username" ngModel name="Username" type="text" #Username="ngModel" class="form-control" id="firstName">
+                    <div class="alert alert-danger" *ngIf="Username.touched && !Username.valid">
+                        <div *ngIf="Username.errors?.required">First Name is required.</div>
+                        <div *ngIf="Username.errors?.minlength">First Name is minimum {{ Username.errors?.minlength.requiredLength }} character.</div>
+                        <div *ngIf="Username.errors?.maxlength">First Name is maximum 10 character.</div>
+                    </div>
+
                 </div>
+                <div class="form-group">
+                    <label for="Email">Email</label>
+                    <input required ngModel name="Email" placeholder="Enter Email" [(ngModel)]="email" type="text" #Email="ngModel" class="form-control" id="Email">
+                    <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
+                        <div *ngIf="Email.errors?.required">Email is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input required minlength="6" maxlength="10" placeholder="Enter Password" [(ngModel)]="password" ngModel name="Password" type="password" #Password="ngModel" class="form-control" id="Password">
+                    <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
+                        <div *ngIf="Password.errors?.required">Password is required.</div>
+                        <div *ngIf="Password.errors?.minlength">Password is minimum {{ Username.errors?.minlength.requiredLength }} character.</div>
+                        <div *ngIf="Password.errors?.maxlength">Password is maximum 10 character.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Mobile">Mobile</label>
+                    <input required minlength="10" maxlength="10" placeholder="Enter Mobile Number" [(ngModel)]="mobile" ngModel name="Mobile" type="text" #Mobile="ngModel" class="form-control" id="Mobile">
+                    <div class="alert alert-danger" *ngIf="Mobile.touched && !Mobile.valid">
+                        <div *ngIf="Mobile.errors?.required">Mobile Number is required.</div>
+                        <div *ngIf="Mobile.errors?.minlength">Invailid Mobile Number</div>
+                        <!-- <div *ngIf="Mobile.errors?.minlength">Invailid Mobile Number</div> -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Address">Address</label>
+                    <input required ngModel name="Address" placeholder="Enter Address" [(ngModel)]="address" type="text" #Address="ngModel" class="form-control" id="Address">
+                    <div class="alert alert-danger" *ngIf="Address.touched && !Address.valid">
+                        <div *ngIf="Address.errors?.required">Address is required.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <p>What do you want to do:</p>
+                    <input type="radio" id="Buyer" ngModel [(ngModel)]="customerRoll" #Choice="ngModel" name="CustomerRoll" value="Buyer">   <label for="buyer">Buyer</label><br>   <input type="radio" id="Seller" [(ngModel)]="customerRoll" ngModel #Choice="ngModel"
+                        name="CustomerRoll" value="Seller">   <label for="Seller">Seller</label>
+                    <div class="alert alert-danger" *ngIf="Choice.touched && !Choice.valid">
+                        <div *ngIf="Choice.errors?.required">Select Choice</div>
+                    </div>
+                </div>
+                <button class="btn button-85" type="submit" [class.disabled]="!contactForm.valid">Submit</button>
+                <!-- <button class="btn btn1" type="button">Cancle</button> -->
+                <button class="button-85  ml-4" role="button">Cancle</button>
 
-            </div>
-            <div class="form-group">
-              <label for="Email">Email</label>
-              <input required ngModel name="Email" placeholder="Enter Email" [(ngModel)]="email" type="text" #Email="ngModel" class="form-control" id="Email">
-              <div class="alert alert-danger" *ngIf="Email.touched && !Email.valid">
-                  <div *ngIf="Email.errors?.required">Email is required.</div>
-              </div>
-          </div>
-          <div class="form-group">
-            <label for="Password">Password</label>
-            <input required minlength="6" maxlength="10" placeholder="Enter Password" [(ngModel)]="password" ngModel name="Password" type="password" #Password="ngModel" class="form-control" id="Password">
-            <div class="alert alert-danger" *ngIf="Password.touched && !Password.valid">
-                <div *ngIf="Password.errors?.required">Password is required.</div>
-                <div *ngIf="Password.errors?.minlength">Password is minimum {{ Username.errors?.minlength.requiredLength }} character.</div>
-                <div *ngIf="Password.errors?.maxlength">Password is maximum 10 character.</div>
-            </div>
-        </div>
-        <div class="form-group">
-          <label for="Mobile">Mobile</label>
-          <input required minlength="10"  maxlength="10" placeholder="Enter Mobile Number" [(ngModel)]="mobile" ngModel name="Mobile" type="text" #Mobile="ngModel" class="form-control" id="Mobile">
-          <div class="alert alert-danger" *ngIf="Mobile.touched && !Mobile.valid">
-              <div *ngIf="Mobile.errors?.required">Mobile Number is required.</div>
-              <div *ngIf="Mobile.errors?.minlength">Invailid Mobile Number</div>
-              <!-- <div *ngIf="Mobile.errors?.minlength">Invailid Mobile Number</div> -->
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="Address">Address</label>
-          <input required ngModel name="Address" placeholder="Enter Address" [(ngModel)]="address" type="text" #Address="ngModel" class="form-control" id="Address">
-          <div class="alert alert-danger" *ngIf="Address.touched && !Address.valid">
-              <div *ngIf="Address.errors?.required">Address is required.</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <p>What do you want to do:</p>
-            <input type="radio" id="Buyer" ngModel [(ngModel)]="customerRoll" #Choice="ngModel" name="CustomerRoll" value="Buyer">
-            <label for="buyer">Buyer</label><br>
-            <input type="radio" id="Seller" [(ngModel)]="customerRoll" ngModel #Choice="ngModel" name="CustomerRoll" value="Seller">
-            <label for="Seller">Seller</label>
-          <div class="alert alert-danger" *ngIf="Choice.touched && !Choice.valid">
-            <div *ngIf="Choice.errors?.required">Select Choice</div>
-        </div>
-        </div>
-            <button class="btn button-85" type="submit" [class.disabled]="!contactForm.valid">Submit</button>
-            <!-- <button class="btn btn1" type="button">Cancle</button> -->
-            <button class="button-85  ml-4" role="button">Cancle</button>
-
-          </form>
+            </form>
         </div>
     </div>
 </div>
-
