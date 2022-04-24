@@ -1,0 +1,33 @@
+<div *ngFor="let data of dataList; index as i" class="container card mt-5">
+    <div class="row">
+        <div class="col col-5">
+            <img src="{{ data.productId.productImage }}" class="img-fluid" alt="" />
+        </div>
+        <div class="col col-4">
+            <div class="form-group">
+                <h2>{{ data.productId.productName | uppercase }}</h2>
+                <h5>Description:</h5>
+                <p>{{ data.productId.productDesc }}</p>
+            </div>
+        </div>
+        <div class="col col-3">
+            <div class="form-group mt-4">
+                <div *ngFor="let creator of data.creator">
+                    <h3 *ngIf="creator.buyersId._id == customer">
+                        Your Bid: {{ creator.priceValue }}
+                    </h3>
+                    <div *ngIf="
+              creator.isApproved == true && creator.buyersId._id == customer
+            " style="padding-bottom: 20px"></div>
+                    <button (click)="placeOrder(data.productId._id, creator.priceValue)" *ngIf="
+              creator.isApproved == true && creator.buyersId._id == customer
+            " class="btn btn-outline-success ml-2">
+            <i class="fas fa-money text-primary"
+              ><span class="text-dark ml-3">Place Order</span></i
+            >
+          </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

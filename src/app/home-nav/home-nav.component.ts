@@ -8,27 +8,27 @@ import { VerificationService } from '../verification.service';
   styleUrls: ['./home-nav.component.css']
 })
 export class HomeNavComponent implements OnInit {
-
-  constructor(private _Service:VerificationService,private _router:Router){}
+  customerId = sessionStorage.getItem('_id');
+  constructor(private _Service: VerificationService, private _router: Router) { }
   ngOnInit(): void {
   }
 
-  public customerType():boolean{
+  public customerType(): boolean {
 
-    if(sessionStorage.getItem('customerType') == "Seller")
-        return true
+    if (sessionStorage.getItem('customerType') == "Seller")
+      return true
     else
-       return false
+      return false
   }
-  public isLoggedIn(){
-    if(sessionStorage.getItem('_id'))
+  public isLoggedIn() {
+    if (sessionStorage.getItem('_id'))
       return true
     else
       return false
   }
 
-  public signOut(){
-    if(confirm('Are You Sure')){
+  public signOut() {
+    if (confirm('Are You Sure')) {
       sessionStorage.clear();
       this._router.navigate(['/']);
     }

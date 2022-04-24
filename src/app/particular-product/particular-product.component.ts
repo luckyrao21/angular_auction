@@ -17,6 +17,7 @@ export class ParticularProductComponent implements OnInit {
   similarList: any[] = [];
   clickedProduct: any;
   productId: any;
+  data: any;
 
   constructor(private product: ProductService, private activatedRout: ActivatedRoute, private Bid: BidService) {
     this.productId = this.activatedRout.snapshot.paramMap.get('id');
@@ -24,6 +25,8 @@ export class ParticularProductComponent implements OnInit {
       if (!data.message) {
         this.clickedProduct = data;
         this.bidPrice = this.clickedProduct.productInitialPrice;
+        this.data = this.clickedProduct.productInitialPrice;
+
         this.product.viewProductByCategory(data.categoryName, this.productId).subscribe(data => {
           console.log(data);
           this.similarList = data

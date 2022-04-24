@@ -18,6 +18,7 @@ import { ParticularProductComponent } from './particular-product/particular-prod
 import { AppComponent } from './app.component';
 import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { BiddedProductComponent } from './bidded-product/bidded-product.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AboutComponent } from './about/about.component';
 import { Aboutus2Component } from './aboutus2/aboutus2.component';
@@ -41,7 +42,15 @@ const routes: Routes = [
   { path: "view-product/product-by-id/:id", component: ParticularProductComponent,canActivate:[AuthGaurdService] },
   { path: "view-product/product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
   { path: "view-bids/:id", component: ViewBidsComponent,canActivate:[AuthGaurdService] },
+  { path: 'bidded-product/place-order/:id', component: PlaceorderComponent },
+  { path: 'add-complaint', component: AddcomplaintComponent },
+  { path: 'view-complaint', component: ViewComplaintComponent },
+  { path: 'view-complaint/revert-complaint/:id', component: RevertComplaintComponent },
   { path: "", component: HomePageComponent },
+  { path: "product-by-id/:id", component: ParticularProductComponent },
+  { path: "product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
+  { path: "bidded-product", component: BiddedProductComponent },
+  { path: "serch-product/product-by-id/:id", component: ParticularProductComponent },
   { path: "contact-us", component: AboutComponent,canActivate:[AuthGaurdService] },
   { path: "about-us", component: Aboutus2Component,canActivate:[AuthGaurdService] },
   { path: "product-by-id/:id", component: ParticularProductComponent,canActivate:[AuthGaurdService] },

@@ -7,12 +7,12 @@ import { Injectable } from '@angular/core';
 })
 export class BuyerService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  placeOrderApi="https://real-bidhouse.herokuapp.com/order/place-order";
+  placeOrderApi = "https://real-bidhouse.herokuapp.com/order/order";
 
-  public placeOrderServ(userId:any,productId:any,mobile:any,address:any,total:any,pincode:any){
-        return this.http.post(this.placeOrderApi,{userId:userId,productId:productId,mobile:mobile,address:address,total:total,pincode:pincode})
+  public placeOrderServ(userId: any, productId: any, mobile: any, address: any, total: any, pincode: any) {
+    return this.http.post(this.placeOrderApi, { userId: userId, productId: productId, mobile: mobile, address: address, total: total, pincode: pincode })
   }
 
 }

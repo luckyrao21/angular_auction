@@ -1,14 +1,22 @@
 <div class="container particuler-product mt-5">
     <div class="row">
-        <div class="col col-5 ">
+        <div class="col col-5">
             <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, at nulla expedita exercitationem consequatur repellat! -->
+
             <img src="{{clickedProduct.productImage}}" class="img-fluid mt-5" alt="">
         </div>
         <div class="col col-7 text-center mt-5">
-            <h3 class="heading" *ngIf="beforeStarting(clickedProduct.startTime); else elseBlock1 ">Bid will start on {{clickedProduct.startTime | date}}</h3>
+            <h3 class="heading" *ngIf="beforeStarting(clickedProduct.startTime); else elseBlock1">
+                Bid will start on {{ clickedProduct.startTime | date }}
+            </h3>
 
             <ng-template #elseBlock1>
-                <h3 class="heading" *ngIf="afterStarting(clickedProduct.startDate,clickedProduct.endDate); else elseBlock2 ">Bid till open {{clickedProduct.startTime | date}}</h3>
+                <h3 class="heading" *ngIf="
+            afterStarting(clickedProduct.startDate, clickedProduct.endDate);
+            else elseBlock2
+          ">
+                    Bid till open {{ clickedProduct.startTime | date }}
+                </h3>
             </ng-template>
 
             <ng-template #elseBlock2>
@@ -18,62 +26,73 @@
             <!-- <h3 class="heading">Auction Will Start on 4:15AM</h3> -->
             <div class="product form-group text-left ml-4">
                 <div class="head mt-5">
-                    <h2 class="mt-4">{{clickedProduct.productName | uppercase}}</h2>
-                    <h5 class="mt-4">Start Price: {{clickedProduct.productInitialPrice}}.00 Rs</h5>
+                    <h2 class="mt-4">{{ clickedProduct.productName | uppercase }}</h2>
+                    <h5 class="mt-4">
+                        Start Price: {{ clickedProduct.productInitialPrice }}.00 Rs
+                    </h5>
                     <h5 class="mt-4">Your Max BId</h5>
                 </div>
                 <div class="selector mt-2">
-                    <select [(ngModel)]="bidPrice" class=" btn ">
-                        <option *ngFor="let data of array"  [ngValue]="data">{{data}} Rs</option>
-                    </select>
-                    <button (click)="addNewBid()" class=" btn btn-warning">SEND</button>
+                    <select [(ngModel)]="bidPrice" class="btn">
+            <option
+              *ngFor="let data of array"
+              [ngValue]="clickedProduct.productInitialPrice"
+            >
+              {{ data }} Rs
+            </option>
+          </select>
+                    <button (click)="addNewBid()" class="btn btn-warning">SEND</button>
                 </div>
                 <div class="desc mt-4 mb-5">
                     <label for="">Description:</label>
-                    <p>{{clickedProduct.productDesc}}</p>
+                    <p>{{ clickedProduct.productDesc }}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
-
-
-
-
 <div class="container mt-5 mb-5">
-    <h1 *ngIf="similarList.length>0" style="text-align: center; padding-top: 10px; ">Similar Products</h1>
-    <hr>
+    <h1 *ngIf="similarList.length > 0" style="text-align: center; padding-top: 10px">
+        Similar Products
+    </h1>
+    <hr />
     <div class="row">
         <div *ngFor="let data of similarList " class="col-md-4 col-lg-3 col-sm-6 ">
             <div class="wsk-cp-product ">
                 <div class="wsk-cp-img ">
                     <img src="{{data.productImage}} " height="150px" width="150px" alt="Product " class="img-responsive " />
                 </div>
-                <div class="wsk-cp-text ">
-                    <div class="category ">
-                        <span routerLink="product-by-id/{{data._id}}">View Auction</span>
+                <div class="wsk-cp-text">
+                    <div class="category">
+                        <span routerLink="product-by-id/{{ data._id }}">View Auction</span>
                     </div>
-                    <div class="title-product ">
-                        <h3>{{data.productName}}</h3>
+                    <div class="title-product">
+                        <h3>{{ data.productName }}</h3>
                     </div>
-                    <div class="description-prod ">
-                        <p>{{data.productDesc}}</p>
+                    <div class="description-prod">
+                        <p>{{ data.productDesc }}</p>
                     </div>
-                    <div class="card-footer ">
-                        <div class="wcf-left ">
-                            <h6>Start Price: </h6>
+                    <div class="card-footer">
+                        <div class="wcf-left">
+                            <h6>Start Price:</h6>
                         </div>
-                        <div class="wcf-right "><span class="price ">Rs. {{data.productInitialPrice}}</span></div>
+                        <div class="wcf-right">
+                            <span class="price">Rs. {{ data.productInitialPrice }}</span>
+                        </div>
                     </div>
-                    <div style="padding-top:15px; ">
+                    <div style="padding-top: 15px">
                         <!-- <p>{{data.startTime}}</p> -->
-                        <p *ngIf="beforeStarting(data.startTime); else elseBlock1 ">bid will start on {{data.startTime}}</p>
+                        <p *ngIf="beforeStarting(data.startTime); else elseBlock1">
+                            bid will start on {{ data.startTime }}
+                        </p>
 
                         <ng-template #elseBlock1>
-                            <p *ngIf="afterStarting(data.startDate,data.endDate); else elseBlock2 ">bid till open {{data.startTime}}
+                            <p *ngIf="
+                  afterStarting(data.startDate, data.endDate);
+                  else elseBlock2
+                ">
+                                bid till open {{ data.startTime }}
                             </p>
                         </ng-template>
 

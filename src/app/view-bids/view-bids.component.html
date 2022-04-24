@@ -9,10 +9,16 @@
     </thead>
     <tbody>
         <tr *ngFor="let data of dataList; index as i">
-            <td>{{i+1}}</td>
-            <td>{{data.buyersId.username}}</td>
-            <td>{{data.priceValue}}</td>
-            <td><button>Lock Bid</button></td>
+            <td>{{ i + 1 }}</td>
+            <td>{{ data.buyersId.username }}</td>
+            <td>{{ data.priceValue }}</td>
+            <td>
+                <button (click)="lockedTheBid(data.buyersId._id)" class="btn btn-outline-success ml-2">
+          <i class="fas fa-lock text-primary"
+            ><span class="text-dark ml-3">Lock Bid</span></i
+          >
+        </button>
+            </td>
         </tr>
     </tbody>
 </table>

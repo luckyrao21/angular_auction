@@ -1,20 +1,22 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light  ">
-
+<nav class="navbar sticky-top navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="#">
-        <img src="https://www.pngall.com/wp-content/uploads/7/Auction-PNG-Photo.png" width="50" height="50" alt="" loading="lazy">
+        <img src="https://www.pngall.com/wp-content/uploads/7/Auction-PNG-Photo.png" width="50" height="50" alt="" loading="lazy" />
     </a>
-    <a class="navbar-brand " href="#">
+    <a class="navbar-brand" href="#">
         <h2>Bid-House</h2>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto ">
+        <ul class="navbar-nav ml-auto">
             <li class="nav-item justify-content-center ml-3 mr-3 active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item justify-content-center ml-3 mr-3">
+        <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item justify-content-center  ml-3 mr-3">
                 <a class="nav-link" routerLink="contact-us">Contact</a>
@@ -22,33 +24,51 @@
             <li class="nav-item justify-content-center  ml-3 mr-3">
                 <a class="nav-link" routerLink="about-us">About</a>
             </li>
+            <li *ngIf="!customerType() && isLoggedIn()" class="nav-item justify-content-center ml-3 mr-3">
+                <a routerLink="bidded-product" class="nav-link">Bidded Products</a>
+            </li>
             <div *ngIf="customerType() && isLoggedIn()" class="dropdown">
-                <button type="button " class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                <button type="button " class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a routerLink="add-product" class="dropdown-item">Add Product</a>
-                    <a routerLink="view-product" class="dropdown-item">View Product</a>
-                    <a routerLink="view-product-by-seller" class="dropdown-item">All Product</a>
-                </div>
-            </div>
+                    <!-- <a routerLink="view-product" class="dropdown-item">View Product</a> -->
+                    <a routerLink="view-product-by-seller" class="dropdown-item">All Product</a
+          >
+        </div>
+      </div>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <li style="padding: 10px">
+        <i routerLink="serch-product" style="font-size: 24px" class="fas"
+          >&#xf002;</i
+        >
+      </li>
+      <li *ngIf="!isLoggedIn()" class="nav-item">
+        <button
+          type="button "
+          class="btn btn-outline-dark pr-3 pl-3"
+          routerLink="signin"
+        >
+          signin
+        </button>
+        <!-- <a class="nav-link " href="# ">signup</a> -->
+                    </li>
+                    <li class="nav-item">
+                        <button *ngIf="!isLoggedIn()" type="button " class="btn btn-outline-dark pr-3 pl-3 ml-1" routerLink="signup">
+          signup
+        </button>
+                        <!-- <a class="nav-link " href="# ">signout</a> -->
+                    </li>
+                    <li class="nav-item">
+                        <button *ngIf="isLoggedIn()" type="button " class="btn btn-outline-dark pr-3 pl-3 ml-1" (click)="signOut()">
+          signout
+        </button>
+                        <!-- <a class="nav-link " href="# ">signout</a> -->
+                    </li>
         </ul>
-        <ul class="navbar-nav ml-auto ">
-            <li style="padding: 10px;"><i routerLink="serch-product" style='font-size:24px' class='fas'>&#xf002;</i></li>
-            <li *ngIf="!(isLoggedIn())" class="nav-item ">
-                <button type="button " class="btn btn-outline-dark pr-3 pl-3 " routerLink="signin">signin</button>
-                <!-- <a class="nav-link " href="# ">signup</a> -->
-            </li>
-            <li class="nav-item ">
-                <button *ngIf="!(isLoggedIn())" type="button " class="btn btn-outline-dark pr-3 pl-3 ml-1 " routerLink="signup">signup</button>
-                <!-- <a class="nav-link " href="# ">signout</a> -->
-            </li>
-            <li class="nav-item ">
-                <button *ngIf="isLoggedIn()" type="button " class="btn btn-outline-dark pr-3 pl-3 ml-1 " (click)="signOut()">signout</button>
-                <!-- <a class="nav-link " href="# ">signout</a> -->
-            </li>
-
-        </ul>
-
-    </div>
+        </div>
 </nav>
 
 <!-- <router-outlet></router-outlet> -->
