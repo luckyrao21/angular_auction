@@ -32,6 +32,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {SocialLoginModule,GoogleLoginProvider} from 'angularx-social-login';
 import { Aboutus2Component } from './aboutus2/aboutus2.component'
+import { AuthGaurdService } from './auth-gaurd.service';
 
 const socialProvider={
   provide: 'SocialAuthServiceConfig',
@@ -70,7 +71,6 @@ const socialProvider={
     HomePageComponent,
     PageNotFoundComponent,
     Aboutus2Component
-
   ],
   imports: [
     BrowserModule,
@@ -87,7 +87,8 @@ const socialProvider={
   SellerService,
   BuyerService,
   VerificationService,
-  socialProvider
+  socialProvider,
+  AuthGaurdService
 
 
 ],
