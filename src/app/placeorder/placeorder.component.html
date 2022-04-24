@@ -1,44 +1,47 @@
-<!-- <h1>this is place order</h1> -->
 <div class="container mt-5">
-  <form #contactForm="ngForm" (ngSubmit)="placeOrder()">
-
-
-    <div class="form-group">
-        <label for="Mobile">Mobile</label>
-        <input required minlength="3" maxlength="10" [(ngModel)]="Mobile" ngModel name="Mobile" type="text" #mobile="ngModel" class="form-control" id="firstName">
-        <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">
+  <div class="row">
+    <div class="col">
+      <form #contactForm="ngForm" (ngSubmit)="placeOrder()">
+        <div class="form-group">
+          <label for="Mobile">Mobile</label>
+          <input required minlength="3" maxlength="10" [(ngModel)]="Mobile" ngModel name="Mobile" type="text"
+            #mobile="ngModel" class="form-control" id="firstName">
+          <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">
             <div *ngIf="mobile.errors?.required">mobile is required.</div>
             <!-- <div *ngIf="mobile.errors?.minlength">First Name is minimum {{ mobile.errors?.minlength.requiredLength }} character.</div>
-            <div *ngIf="mobile.errors?.maxlength">First Name is maximum 10 character.</div> -->
+                <div *ngIf="mobile.errors?.maxlength">First Name is maximum 10 character.</div> -->
+          </div>
         </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input required ngModel name="address" [(ngModel)]="Address" type="text" #address="ngModel"
+            class="form-control" id="address">
+          <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
+            <div *ngIf="address.errors?.required">Address is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="total">Total</label>
+          <input required ngModel name="total" [(ngModel)]="Total" type="text" #total="ngModel" class="form-control"
+            id="total">
+          <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
+            <div *ngIf="total.errors?.required">total is required.</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pincode">pincode</label>
+          <input required minlength="6" maxlength="10" [(ngModel)]="Pincode" ngModel name="pincode" type="text"
+            #pincode="ngModel" class="form-control" id="pincode">
+          <div class="alert alert-danger" *ngIf="pincode.touched && !pincode.valid">
+            <div *ngIf="pincode.errors?.required">Password is required.</div>
+            <!-- <div *ngIf="pincode.errors?.minlength">Password is minimum {{ pincode.errors?.minlength.requiredLength }} character.</div>
+            <div *ngIf="pincode.errors?.maxlength">Password is maximum 10 character.</div> -->
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn glow-on-hover" type="submit"><i class=" text-white mr-4 fab fa-first-order"><span class="ml-4">Place Order</span></i></button>
+        </div>
+      </form>
     </div>
-    <div class="form-group">
-      <label for="address">Address</label>
-      <input required ngModel name="address" [(ngModel)]="Address" type="text" #address="ngModel" class="form-control" id="address">
-      <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
-          <div *ngIf="address.errors?.required">Address is required.</div>
-      </div>
   </div>
-  <div class="form-group">
-    <label for="total">Total</label>
-    <input required ngModel name="total" [(ngModel)]="Total" type="text" #total="ngModel" class="form-control" id="total">
-    <div class="alert alert-danger" *ngIf="address.touched && !address.valid">
-        <div *ngIf="total.errors?.required">total is required.</div>
-    </div>
 </div>
-  <div class="form-group">
-    <label for="pincode">pincode</label>
-    <input required minlength="6" maxlength="10" [(ngModel)]="Pincode" ngModel name="pincode" type="text" #pincode="ngModel" class="form-control" id="pincode">
-    <div class="alert alert-danger" *ngIf="pincode.touched && !pincode.valid">
-        <div *ngIf="pincode.errors?.required">Password is required.</div>
-        <!-- <div *ngIf="pincode.errors?.minlength">Password is minimum {{ pincode.errors?.minlength.requiredLength }} character.</div>
-        <div *ngIf="pincode.errors?.maxlength">Password is maximum 10 character.</div> -->
-    </div>
-</div>
-<div class="form-group">
-    <button type="submit">Click to Place</button>
-</div>
-  </form>
-</div>
-
-

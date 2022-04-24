@@ -6,6 +6,7 @@ import { observable } from 'rxjs';
 export class VerificationService {
   signupUrl="https://real-bidhouse.herokuapp.com/customer/signup"
   signinUrl="https://real-bidhouse.herokuapp.com/customer/signin"
+  googleUrl="https://real-bidhouse.herokuapp.com/customer/socialSign";
 
 
   constructor(private _http:HttpClient) { }
@@ -16,6 +17,11 @@ export class VerificationService {
   public signin (email:string,password:string){
       return this._http.post<any>(this.signinUrl,{email:email,password:password})
   }
+
+  public googleSignin (email:string){
+    return this._http.get<any>(this.signinUrl)
+}
+
   public  CheckToken():boolean{
     return !!localStorage.getItem('jwtToken');
      }

@@ -18,6 +18,9 @@ import { ParticularProductComponent } from './particular-product/particular-prod
 import { AppComponent } from './app.component';
 import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AboutComponent } from './about/about.component';
+import { Aboutus2Component } from './aboutus2/aboutus2.component';
 
 const routes: Routes = [
   { path: 'update-profile', component: UpdateProfileComponent },
@@ -37,7 +40,15 @@ const routes: Routes = [
   { path: "view-product/product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
   { path: "view-bids/:id", component: ViewBidsComponent },
   { path: "", component: HomePageComponent },
+  { path: "contact-us", component: AboutComponent },
+  { path: "about-us", component: Aboutus2Component },
   { path: "product-by-id/:id", component: ParticularProductComponent },
+  { path: "about-us/contact-us", component: AboutComponent },
+  { path: "**", component: PageNotFoundComponent },
+
+  // { path: "signin", component: SigninComponent },
+
+
 
 
 ]
