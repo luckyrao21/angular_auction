@@ -18,11 +18,12 @@ import { ParticularProductComponent } from './particular-product/particular-prod
 import { AppComponent } from './app.component';
 import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { BiddedProductComponent } from './bidded-product/bidded-product.component';
 
 const routes: Routes = [
   { path: 'update-profile', component: UpdateProfileComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  { path: 'place-order', component: PlaceorderComponent },
+  { path: 'bidded-product/place-order/:id', component: PlaceorderComponent },
   { path: 'add-complaint', component: AddcomplaintComponent },
   { path: 'view-complaint', component: ViewComplaintComponent },
   { path: 'view-complaint/revert-complaint/:id', component: RevertComplaintComponent },
@@ -38,6 +39,9 @@ const routes: Routes = [
   { path: "view-bids/:id", component: ViewBidsComponent },
   { path: "", component: HomePageComponent },
   { path: "product-by-id/:id", component: ParticularProductComponent },
+  { path: "product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
+  { path: "bidded-product", component: BiddedProductComponent },
+  { path: "serch-product/product-by-id/:id", component: ParticularProductComponent },
 
 
 ]

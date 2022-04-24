@@ -29,6 +29,7 @@ import { ParticularProductComponent } from './particular-product/particular-prod
 import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { AboutComponent } from './about/about.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { BiddedProductComponent } from './bidded-product/bidded-product.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     ParticularProductComponent,
     ViewBidsComponent,
     AboutComponent,
-    HomePageComponent
+    HomePageComponent,
+    BiddedProductComponent
 
   ],
   imports: [
