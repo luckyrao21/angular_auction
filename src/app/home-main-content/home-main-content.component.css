@@ -15,6 +15,18 @@
     font-size: 62px;
 }
 
+.first{
+    font-size: 15vh;
+    text-shadow: 1px 2px 2px #000000;
+    border-radius: 5vh;
+    border: 3px dotted black;
+    /* margin-top: -50vh; */
+}
+.second{
+  border-radius: 9vh;
+  border: 3px solid white;
+}
+
 .text-box p {
     margin: 10px 0 40px;
     font-size: 14px;

@@ -19,29 +19,47 @@ import { AppComponent } from './app.component';
 import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BiddedProductComponent } from './bidded-product/bidded-product.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AboutComponent } from './about/about.component';
+import { Aboutus2Component } from './aboutus2/aboutus2.component';
+import { AuthGaurdService } from './auth-gaurd.service';
 
 const routes: Routes = [
-  { path: 'update-profile', component: UpdateProfileComponent },
-  { path: 'reset-password', component: ResetPasswordComponent },
+  { path: 'update-profile', component: UpdateProfileComponent,canActivate:[AuthGaurdService] },
+  { path: 'reset-password', component: ResetPasswordComponent,canActivate:[AuthGaurdService] },
+  { path: 'place-order', component: PlaceorderComponent,canActivate:[AuthGaurdService] },
+  { path: 'add-complaint', component: AddcomplaintComponent,canActivate:[AuthGaurdService] },
+  { path: 'view-complaint', component: ViewComplaintComponent,canActivate:[AuthGaurdService] },
+  { path: 'view-complaint/revert-complaint/:id', component: RevertComplaintComponent,canActivate:[AuthGaurdService] },
+  { path: "signin", component: SigninComponent },
+  { path: "signup", component: SignupComponent },
+  { path: "signin/signup", component: SignupComponent },
+  { path: "add-product", component: AddProductComponent,canActivate:[AuthGaurdService] },
+  { path: "view-product", component: ViewProductComponent,canActivate:[AuthGaurdService] },
+  { path: "view-product-by-seller", component: ProductViewSellerComponent,canActivate:[AuthGaurdService] },
+  { path: "view-product-by-seller/update-product/:id", component: UpdateProductComponent,canActivate:[AuthGaurdService] },
+  { path: "serch-product", component: SearchProductComponent,canActivate:[AuthGaurdService] },
+  { path: "view-product/product-by-id/:id", component: ParticularProductComponent,canActivate:[AuthGaurdService] },
+  { path: "view-product/product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
+  { path: "view-bids/:id", component: ViewBidsComponent,canActivate:[AuthGaurdService] },
   { path: 'bidded-product/place-order/:id', component: PlaceorderComponent },
   { path: 'add-complaint', component: AddcomplaintComponent },
   { path: 'view-complaint', component: ViewComplaintComponent },
   { path: 'view-complaint/revert-complaint/:id', component: RevertComplaintComponent },
-  { path: "signin", component: SigninComponent },
-  { path: "signup", component: SignupComponent },
-  { path: "add-product", component: AddProductComponent },
-  { path: "view-product", component: ViewProductComponent },
-  { path: "view-product-by-seller", component: ProductViewSellerComponent },
-  { path: "view-product-by-seller/update-product/:id", component: UpdateProductComponent },
-  { path: "serch-product", component: SearchProductComponent },
-  { path: "view-product/product-by-id/:id", component: ParticularProductComponent },
-  { path: "view-product/product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
-  { path: "view-bids/:id", component: ViewBidsComponent },
   { path: "", component: HomePageComponent },
   { path: "product-by-id/:id", component: ParticularProductComponent },
   { path: "product-by-id/:ids/product-by-id/:id", component: ParticularProductComponent },
   { path: "bidded-product", component: BiddedProductComponent },
   { path: "serch-product/product-by-id/:id", component: ParticularProductComponent },
+  { path: "contact-us", component: AboutComponent,canActivate:[AuthGaurdService] },
+  { path: "about-us", component: Aboutus2Component,canActivate:[AuthGaurdService] },
+  { path: "product-by-id/:id", component: ParticularProductComponent,canActivate:[AuthGaurdService] },
+  { path: "about-us/contact-us", component: AboutComponent,canActivate:[AuthGaurdService] },
+  { path: "**", component: PageNotFoundComponent },
+
+  // { path: "signin", component: SigninComponent },
+
+
 
 
 ]

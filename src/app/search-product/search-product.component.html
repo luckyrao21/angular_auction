@@ -10,9 +10,10 @@
                 </div>
             </div>
         </div>
-    </div>
+<!--     </div>
 
-    <h1 *ngIf="!(dataList.length == 0)" style="text-align: center; padding-top: 10px">
+<!-- Raaj branch -->
+<!--     <h1 *ngIf="!(dataList.length == 0)" style="text-align: center; padding-top: 10px">
         All Products
     </h1>
     <hr />
@@ -21,6 +22,15 @@
             <div style="background: #a1eef9" class="wsk-cp-product">
                 <div class="wsk-cp-img">
                     <img src="{{ data.productImage }} " alt="Product " class="img-responsive" />
+=======  -->
+    <h1 *ngIf="!(dataList.length==0)" style="text-align: center; padding-top: 10px; ">All Products</h1>
+    <hr>
+    <div *ngIf="!(dataList.length==0); else elseBlock " class="row ">
+        <div *ngFor="let data of dataList " class="col-md-4 col-lg-3 col-sm-6 ">
+            <div class="wsk-cp-product ">
+                <div class="wsk-cp-img ">
+                    <img src="{{data.productImage}} " alt="Product " height="150px" width="150px" class="img-responsive " />
+<!-- >>>>>>> master -->
                 </div>
                 <div class="wsk-cp-text">
                     <div class="category">

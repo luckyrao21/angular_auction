@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { VerificationService } from '../verification.service';
+import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 
 @Component({
   selector: 'app-signin',
@@ -8,11 +9,12 @@ import { VerificationService } from '../verification.service';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-
+  collect:any=""
   email:string= "";
   password:string= "";
-  currentUser:any;
- constructor(private _service:VerificationService,private _router:Router) { }
+  currentUser:any
+
+ constructor(private _service:VerificationService,private _router:Router,private service:SocialAuthService) { }
  public signin(){
     this._service.signin(this.email,this.password).subscribe(data=>{
       console.log(data);
@@ -33,6 +35,28 @@ export class SigninComponent implements OnInit {
 
      })
  }
+
+googleSignin(){
+  this.service.signIn(GoogleLoginProvider.PROVIDER_ID)
+  this.service.authState.subscribe(data=>{
+    console.log(data);
+    // this.name=data.name;
+    // this.email=data.email;
+    // this.image=data. photoUrl;
+    this.collect=data
+    if(this.collect.err){
+        alert("login failed")
+    }
+    else{
+      sessionStorage.setItem('_id',this.collect.id)
+      alert("Login Successfully...");
+      this._router.navigate(['/']);
+    }
+
+  })
+}
+
+
   ngOnInit(): void {
   }
 

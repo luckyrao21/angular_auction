@@ -18,8 +18,11 @@
       <li class="nav-item justify-content-center ml-3 mr-3">
         <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item justify-content-center ml-3 mr-3">
-                <a class="nav-link" href="#">About</a>
+            <li class="nav-item justify-content-center  ml-3 mr-3">
+                <a class="nav-link" routerLink="contact-us">Contact</a>
+            </li>
+            <li class="nav-item justify-content-center  ml-3 mr-3">
+                <a class="nav-link" routerLink="about-us">About</a>
             </li>
             <li *ngIf="!customerType() && isLoggedIn()" class="nav-item justify-content-center ml-3 mr-3">
                 <a routerLink="bidded-product" class="nav-link">Bidded Products</a>

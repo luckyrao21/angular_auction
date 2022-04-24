@@ -13,8 +13,9 @@
             <div *ngFor="let data of dataList" class="col-md-4 col-lg-3 col-sm-6">
                 <div class="wsk-cp-product" style="background: #a1eef9">
                     <div class="wsk-cp-img">
+<!-- <<<<<<< rajBranch -->
                         <img src="{{ data.productImage }}" alt="Product" class="img-responsive" />
-                    </div>
+<!--                     </div>
                     <div class="wsk-cp-text">
                         <div class="category">
                             <span routerLink="product-by-id/{{ data._id }}">View Auction</span
@@ -31,7 +32,26 @@
                 <h6>Start Price:</h6>
               </div>
               <div class="wcf-right">
-                <span class="price">Rs. {{ data.productInitialPrice }}</span>
+                <span class="price">Rs. {{ data.productInitialPrice }}</span> -->
+<!-- ======= -->
+                        <img src="{{data.productImage}}" height="150px" width="150px" alt="Product" class="img-responsive" />
+                    </div>
+                    <div class="wsk-cp-text">
+                        <div class="category">
+                            <span routerLink="product-by-id/{{data._id}}">View Auction</span>
+                        </div>
+                        <div class="title-product mt-4">
+                            <h3>{{data.productName}}</h3>
+                        </div>
+                        <div class="description-prod">
+                            <p>{{data.productDesc}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="wcf-left">
+                                <h6>Start Price: </h6>
+                            </div>
+                            <div class="wcf-right"><span class="price">Rs. {{data.productInitialPrice}}</span></div>
+<!-- >>>>>>> master -->
                         </div>
                     </div>
                     <div style="padding-top: 15px">
@@ -58,4 +78,6 @@
         </div>
     </div>
 </div>
+<!-- <<<<<<< rajBranch -->
 </div>
+<!-- >>>>>>> master -->

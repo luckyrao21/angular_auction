@@ -30,7 +30,22 @@ import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { AboutComponent } from './about/about.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BiddedProductComponent } from './bidded-product/bidded-product.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {SocialLoginModule,GoogleLoginProvider} from 'angularx-social-login';
+import { Aboutus2Component } from './aboutus2/aboutus2.component'
+import { AuthGaurdService } from './auth-gaurd.service';
 
+const socialProvider={
+  provide: 'SocialAuthServiceConfig',
+  useValue: {
+    providers: [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("932714115907-r4uj5m51maogcmtr3repssibk2gd83jf.apps.googleusercontent.com"),
+      }
+    ]
+  }
+};
 @NgModule({
   declarations: [
     UpdateProfileComponent,
@@ -56,13 +71,15 @@ import { BiddedProductComponent } from './bidded-product/bidded-product.componen
     AboutComponent,
     HomePageComponent,
     BiddedProductComponent
-
+    PageNotFoundComponent,
+    Aboutus2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,
@@ -71,7 +88,10 @@ import { BiddedProductComponent } from './bidded-product/bidded-product.componen
    },
   SellerService,
   BuyerService,
-  VerificationService
+  VerificationService,
+  socialProvider,
+  AuthGaurdService
+
 
 ],
   bootstrap: [AppComponent]
