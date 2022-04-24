@@ -32,6 +32,7 @@ const routes: Routes = [
   { path: 'view-complaint/revert-complaint/:id', component: RevertComplaintComponent,canActivate:[AuthGaurdService] },
   { path: "signin", component: SigninComponent },
   { path: "signup", component: SignupComponent },
+  { path: "signin/signup", component: SignupComponent },
   { path: "add-product", component: AddProductComponent,canActivate:[AuthGaurdService] },
   { path: "view-product", component: ViewProductComponent,canActivate:[AuthGaurdService] },
   { path: "view-product-by-seller", component: ProductViewSellerComponent,canActivate:[AuthGaurdService] },

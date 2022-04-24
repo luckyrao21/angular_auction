@@ -3,4 +3,6 @@
     background-color: #e6fcfc;
     border-radius: 25px;
     margin-top: 10%;
+    -webkit-box-shadow: -1px 6px 19px 6px rgba(0,0,0,0.73);
+box-shadow: -1px 6px 19px 6px rgba(0,0,0,0.73);
 }
