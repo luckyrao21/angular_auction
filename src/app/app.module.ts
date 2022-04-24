@@ -29,7 +29,21 @@ import { ParticularProductComponent } from './particular-product/particular-prod
 import { ViewBidsComponent } from './view-bids/view-bids.component';
 import { AboutComponent } from './about/about.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {SocialLoginModule,GoogleLoginProvider} from 'angularx-social-login';
+import { Aboutus2Component } from './aboutus2/aboutus2.component'
 
+const socialProvider={
+  provide: 'SocialAuthServiceConfig',
+  useValue: {
+    providers: [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("932714115907-r4uj5m51maogcmtr3repssibk2gd83jf.apps.googleusercontent.com"),
+      }
+    ]
+  }
+};
 @NgModule({
   declarations: [
     UpdateProfileComponent,
@@ -53,14 +67,17 @@ import { HomePageComponent } from './home-page/home-page.component';
     ParticularProductComponent,
     ViewBidsComponent,
     AboutComponent,
-    HomePageComponent
+    HomePageComponent,
+    PageNotFoundComponent,
+    Aboutus2Component
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SocialLoginModule
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,
@@ -69,7 +86,9 @@ import { HomePageComponent } from './home-page/home-page.component';
    },
   SellerService,
   BuyerService,
-  VerificationService
+  VerificationService,
+  socialProvider
+
 
 ],
   bootstrap: [AppComponent]

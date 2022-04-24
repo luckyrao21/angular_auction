@@ -1,0 +1,33 @@
+.content{
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+.fa{
+  height: 20px;
+  width: 20px;
+  font-size: x-large;
+
+}
+.links i{
+  padding: 15px;
+  margin-top: -5px;
+}
+body{
+  /* background-image: url(''); */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content{
+  font-size: larger;
+}
+.bton{
+  border: 2px solid rgb(43, 38, 38);
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+}
+.bton:hover{
+  background-color: rgb(158, 233, 243);
+  color: rgb(0, 0, 0);
+}
